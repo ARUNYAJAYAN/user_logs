@@ -16,7 +16,6 @@ migrate = Migrate()
 def create_app(env=None):
     from app.config import config_by_name
     from app.routes import register_routes
-    from app.user.models import User
 
     app = Flask(__name__)
     app.config.from_object(config_by_name[env or 'dev'])
@@ -41,6 +40,9 @@ def create_app(env=None):
     @app.route("/health")
     def health():
         return Response.success({"status": "Running"}, HttpStatusCode.CREATED, "Successfully working")
+
+    from .custom_exception_handlers import register_error_handlers
+    register_error_handlers(api)
 
     return app
 

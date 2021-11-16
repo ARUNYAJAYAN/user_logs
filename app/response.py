@@ -36,9 +36,6 @@ class Response:
         if not isinstance(status_code, HttpStatusCode):
             raise TypeError('status_code must be an instance of HttpStatusCode Enum')
 
-        if business_error is not None and not isinstance(business_error, BusinessErrorCode):
-            raise TypeError('business_error mus be an instance of BusinessErrorCode Enum')
-
         error_response = {
             "status": status_code.name,
             "code": status_code.value,

@@ -55,7 +55,10 @@ class MessageService:
     @staticmethod
     def list_message(user_id):
         message = Message.query.filter_by(user_id=user_id).all()
-        ActivityLogService.create_logs(message[0], activity="List_message")
+        if message:
+            ActivityLogService.create_logs(message[0], activity="List_message")
+        else:
+            message = []
         return message
 
     @staticmethod
@@ -71,7 +74,8 @@ class MessageService:
     @staticmethod
     def delete_message(id):
         message = Message.query.filter_by(id=id).first()
-        ActivityLogService.create_logs(message, activity="Delete_message")
+        if message:
+            ActivityLogService.create_logs(message, activity="Delete_message")
         Message.query.filter_by(id=id).delete()
         db.session.commit()
 
@@ -82,7 +86,7 @@ class ActivityLogService:
         data = {}
         if activity == "SignUp":
             data['user_id'] = user.id
-            data['activity'] = str(user.full_name + "sign up")
+            data['activity'] = str(user.full_name + " signed up")
         elif activity == "SignIn":
             print("hdbjfhfd")
             data['user_id'] = user.id

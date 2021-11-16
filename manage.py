@@ -4,7 +4,7 @@ from flask_migrate import Migrate, MigrateCommand
 
 from app import create_app, db
 
-env = os.getenv("FLASK_ENV") or "test"
+env = os.getenv("FLASK_ENV") or "dev"
 print(f"Active environment: * {env} *")
 
 

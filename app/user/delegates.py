@@ -16,7 +16,6 @@ class AuthDelegate:
         if encoded_username_password:
             auth_string = base64.b64decode(encoded_username_password).decode('utf-8')
             username, password = auth_string.split(":")
-            password = base64.b64decode(password).decode('utf-8')
             data = {}
             data['username'] = username
             data['password'] = password

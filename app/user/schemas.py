@@ -8,7 +8,7 @@ class UserSchema(ma.SQLAlchemySchema):
     full_name = fields.Str(required=True)
     email = fields.Str(required=True)
     password = fields.Str(required=True)
-    is_active = fields.Boolean(dump_only=True)
+    is_admin = fields.Boolean(required=False)
 
 
 class MessageSchema(ma.SQLAlchemySchema):
