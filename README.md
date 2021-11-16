@@ -23,3 +23,5 @@ To run the application:
 Tech Stack Used FLASK, flask_restx, flask_marshmallow, flask_marshmallow, flask_jwt_extended, flask_migrate
 
 API docs:https://www.getpostman.com/collections/a9d5726f2637ae2faa96
+
+password is encrypted by Base64: https://www.base64encode.org/ use this site for base64 encoded password
