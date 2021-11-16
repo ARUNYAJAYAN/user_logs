@@ -18,8 +18,8 @@ To run the application:
 
 6. for upgrade db using flask db upgrade
 
-3. Run python manage.py runserver
+3. Run python manage.py run
 
 Tech Stack Used FLASK, flask_restx, flask_marshmallow, flask_marshmallow, flask_jwt_extended, flask_migrate
 
-API docs:
+API docs:https://www.getpostman.com/collections/a9d5726f2637ae2faa96
